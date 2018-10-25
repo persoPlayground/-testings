@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Root from './Root';
 import App from './components/App';
 import rootReducer from './reducers';
@@ -12,7 +13,9 @@ const store = createStore(rootReducer);
 
 ReactDOM.render(
     <Root>
-        <App />
+        <BrowserRouter>
+            <Route path='/'  component={App} />
+        </BrowserRouter>
     </Root>
 , document.getElementById('root'));
 
